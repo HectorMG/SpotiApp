@@ -6,16 +6,16 @@ body {
 }
 
 hr {
-    border-color: white;
+    border-color: white !important;
 }
 
 .puntero {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .img-circle {
-    border-radius: 100%;
-    width: 150px;
+    border-radius: 100%  !important;
+    width: 150px !important;
 }
 
 .card-title,
