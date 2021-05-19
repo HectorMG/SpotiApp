@@ -15,6 +15,6 @@ export class SpotifyService {
     const header = new HttpHeaders({
       'Authorization': 'Bearer BQAjhudpd-4HulqcOem6E1ElBQgGcTYAFDz65sE8iz_rJ5dCXNuSR6k_tU0pv2rx-qGrSpN9J5LmH5ewYvk'
     });
-    this.http.get(this.URL+'new-releases',{headers:header});
+    return this.http.get(this.URL+'new-releases?country=CO',{headers:header});
   }
 }
