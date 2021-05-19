@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class SpotifyService {
 
-  URL: string = 'https://api.spotify.com/v1/browse/';
+  URL: string = 'https://api.spotify.com/v1/';
 
   constructor(private http: HttpClient) {
   }
@@ -15,6 +15,14 @@ export class SpotifyService {
     const header = new HttpHeaders({
       'Authorization': 'Bearer BQAjhudpd-4HulqcOem6E1ElBQgGcTYAFDz65sE8iz_rJ5dCXNuSR6k_tU0pv2rx-qGrSpN9J5LmH5ewYvk'
     });
-    return this.http.get(this.URL+'new-releases?country=CO',{headers:header});
+    return this.http.get(this.URL+'browse/new-releases?country=CO',{headers:header});
   }
+
+  getArtista(termino: string){
+    const header = new HttpHeaders({
+      'Authorization': 'Bearer BQAjhudpd-4HulqcOem6E1ElBQgGcTYAFDz65sE8iz_rJ5dCXNuSR6k_tU0pv2rx-qGrSpN9J5LmH5ewYvk'
+    });
+    return this.http.get(this.URL+`search?q=${termino}&type=artist&limit=15`,{headers:header});
+  }
+
 }
