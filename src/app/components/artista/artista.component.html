@@ -32,7 +32,10 @@
                     <td><img [src]="topTrack.album.images | noImage" class="img-thumb "></td>
                     <td >{{ topTrack.album.name }}</td>
                     <td>{{ topTrack.name }}</td>
-                    <td> <audio [src]="topTrack.preview_url" controls></audio> </td>
+                    <!-- <td> <audio [src]="topTrack.preview_url" controls></audio> </td> -->
+                    <td>
+                        <iframe [src]="topTrack.uri | domSeguro" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
                 </tr>
             </tbody>
         </table>
